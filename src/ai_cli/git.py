@@ -5,7 +5,9 @@ import shlex
 import subprocess
 import sys
 from typing import Collection, Tuple, Union
+from transformers import pipeline
 
+pipe = pipeline("text-generation", model="llm-blender/PairRM", trust_remote_code=True)
 logger = logging.getLogger(__name__)
 
 DIFF_EXCLUDE = [
